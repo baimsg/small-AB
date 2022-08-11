@@ -1,4 +1,4 @@
-package com.baimsg.data.api
+package com.chat.data.api
 
 import dagger.Module
 import dagger.Provides

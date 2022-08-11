@@ -106,7 +106,7 @@ object Dep {
     }
 
     object Hilt {
-        private const val hilt = "2.41"
+        private const val hilt = "2.42"
         const val library = "com.google.dagger:hilt-android:$hilt"
         const val compiler = "com.google.dagger:hilt-compiler:$hilt"
     }

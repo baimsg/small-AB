@@ -1,11 +1,10 @@
 package com.chat.data.api
 
 import android.app.Application
-import com.baimsg.data.BuildConfig
-import com.baimsg.data.api.NetConfig
-import com.baimsg.data.api.converter.ToStringConverterFactory
-import com.baimsg.data.api.interceptor.DynamicURLInterceptor
-import com.baimsg.data.model.DEFAULT_JSON_FORMAT
+import com.chat.data.BuildConfig
+import com.chat.data.api.converter.ToStringConverterFactory
+import com.chat.data.api.interceptor.DynamicURLInterceptor
+import com.chat.data.model.DEFAULT_JSON_FORMAT
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides

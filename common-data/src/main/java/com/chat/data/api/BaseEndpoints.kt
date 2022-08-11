@@ -1,6 +1,5 @@
-package com.baimsg.data.api
+package com.chat.data.api
 
-import com.baimsg.data.model.ConfigBean
 import retrofit2.http.*
 
 /**
@@ -8,20 +7,6 @@ import retrofit2.http.*
  *
  **/
 interface BaseEndpoints {
-    /**
-     * 有道云笔记获取配置信息
-     * @param fileId 文件id
-     * @param shareKey 分享密钥
-     * @param method 请求方法
-     * @param read 是否可读性
-     */
-    @GET("yws/api/personal/file/{fd}")
-    suspend fun getPersonal(
-        @Path("fd") fileId: String,
-        @Query("shareKey") shareKey: String,
-        @Query("method") method: String = "read",
-        @Query("read") read: Boolean = true
-    ): ConfigBean
 
     /**
      * @param baseUrl API地址

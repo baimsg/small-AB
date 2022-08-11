@@ -7,6 +7,16 @@ pluginManagement {
         mavenLocal()
     }
 }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { setUrl("https://plugins.gradle.org/m2/") }
+        maven { setUrl("https://jitpack.io") }
+        mavenCentral()
+        google()
+        mavenLocal()
+    }
+}
 rootProject.name = "VideoHoney"
 include(":app")
 include(":base")

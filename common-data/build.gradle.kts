@@ -6,6 +6,7 @@ plugins {
     kotlin("kapt")
     kotlin("plugin.serialization")
     id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -27,10 +28,10 @@ android {
 }
 
 dependencies {
-//    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
-//    implementation(project(":base"))
-//    implementation(project(":base-android"))
-//
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
+    implementation(project(":base"))
+    implementation(project(":base-android"))
+
     implementation(Dep.Hilt.library)
     //hilt
     kapt(Dep.Hilt.compiler)
