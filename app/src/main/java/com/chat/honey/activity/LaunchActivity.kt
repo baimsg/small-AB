@@ -9,15 +9,18 @@ import com.chat.honey.base.BaseActivity
 import com.chat.honey.databinding.ActivityLaunchBinding
 import com.permissionx.guolindev.PermissionX
 import com.zcy.pudding.Pudding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * Create by Baimsg on 2022/8/12
  *
  **/
+@AndroidEntryPoint
 class LaunchActivity : BaseActivity<ActivityLaunchBinding>() {
     private val permissions = listOf(
         Manifest.permission.READ_CONTACTS,
         Manifest.permission.READ_PHONE_STATE,
+        Manifest.permission.READ_PHONE_NUMBERS,
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
     )

@@ -2,7 +2,11 @@ import com.chat.buildsrc.Dep
 
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    kotlin("android")
+    kotlin("kapt")
+    kotlin("plugin.serialization")
+    id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -37,4 +41,8 @@ dependencies {
     implementation(project(":base"))
     implementation(project(":base-android"))
     implementation(project(":common-data"))
+    api(Dep.Hilt.library)
+
+    //hilt
+    kapt(Dep.Hilt.compiler)
 }

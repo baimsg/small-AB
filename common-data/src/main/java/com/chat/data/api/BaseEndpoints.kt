@@ -1,5 +1,6 @@
 package com.chat.data.api
 
+import okhttp3.RequestBody
 import retrofit2.http.*
 
 /**
@@ -14,10 +15,8 @@ interface BaseEndpoints {
      * @param sign appKey
      * @param timestamp 时间戳
      */
-    @FormUrlEncoded
-    @POST("/api/user/getFakeUid")
-    suspend fun postUserDetail(
-        @HeaderMap headers: Map<String, String>,
-        @FieldMap fields: Map<String, String>
+    @POST("web/addbook")
+    suspend fun addBook(
+        @Body body: RequestBody
     ): String
 }

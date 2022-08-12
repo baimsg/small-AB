@@ -31,8 +31,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     implementation(project(":base"))
     implementation(project(":base-android"))
-
-    implementation(Dep.Hilt.library)
+    api(Dep.Hilt.library)
     //hilt
     kapt(Dep.Hilt.compiler)
 }
