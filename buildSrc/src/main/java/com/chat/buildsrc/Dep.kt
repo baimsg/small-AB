@@ -115,6 +115,7 @@ object Dep {
         const val mmkv = "com.tencent:mmkv-static:1.2.10"
         const val glide = "com.github.bumptech.glide:glide:4.11.0"
         const val permissionX = "com.guolindev.permissionx:permissionx:1.6.4"
+        const val pudding = "com.github.o0o0oo00:Pudding:1.2.1"
 
         object Dialog {
             private const val ver = "3.3.0"

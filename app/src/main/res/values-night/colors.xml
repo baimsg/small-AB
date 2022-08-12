@@ -5,10 +5,11 @@
     <color name="color_primary_variant">#FF94C2</color>
     <color name="color_secondary">#5C6BC0</color>
     <color name="color_secondary_variant">#26418f</color>
-    <color name="background">#F4F4F4</color>
 
-    <color name="item_bg_white_default">#FFFFFF</color>
-    <color name="item_bg_white_disabled">#1A666666</color>
-    <color name="item_bg_white_pressed">#CCF6F6F6</color>
+    <color name="background">#111111</color>
+
+    <color name="item_bg_white_default">#252525</color>
+    <color name="item_bg_white_disabled">#33252525</color>
+    <color name="item_bg_white_pressed">#80252525</color>
 
 </resources>

@@ -61,6 +61,7 @@ dependencies {
 
     api(Dep.AndroidX.multiDex)
     api(Dep.Libs.glide)
+    api(Dep.Libs.pudding)
     api(Dep.Libs.permissionX)
     api(Dep.Libs.Dialog.core)
     api(Dep.Libs.Dialog.input)
