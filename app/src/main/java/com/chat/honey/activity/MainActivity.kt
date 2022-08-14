@@ -1,10 +1,8 @@
 package com.chat.honey.activity
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.res.Configuration
 import android.provider.ContactsContract
-import android.telephony.TelephonyManager
 import androidx.activity.viewModels
 import com.chat.base.util.extensions.logE
 import com.chat.honey.base.BaseActivity
@@ -12,7 +10,6 @@ import com.chat.honey.databinding.ActivityMainBinding
 import com.chat.honey.util.extensions.setStatusBarDarkMode
 import com.chat.honey.util.extensions.setStatusBarLightMode
 import dagger.hilt.android.AndroidEntryPoint
-import java.lang.reflect.Method
 
 
 /**
