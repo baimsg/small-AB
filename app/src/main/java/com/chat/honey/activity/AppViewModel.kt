@@ -2,14 +2,17 @@ package com.chat.honey.activity
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.chat.base.util.extensions.logE
 import com.chat.data.api.BaseEndpoints
 import com.chat.data.model.ContactItem
 import com.chat.data.model.Contacts
 import com.chat.data.model.JSON
+import com.chat.honey.fragment.login.SubmitContactViewState
+import com.chat.honey.type.ExecutionStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 import javax.inject.Inject
@@ -23,30 +26,44 @@ class AppViewModel @Inject constructor(
     private val baseEndpoints: BaseEndpoints
 ) : ViewModel() {
 
+    private val _submitViewState by lazy {
+        MutableStateFlow(SubmitContactViewState.EMPTY)
+    }
+
+    val observeSubmitContactViewState: StateFlow<SubmitContactViewState> = _submitViewState
+
+    private val contacts: List<ContactItem>
+        get() =
+            _submitViewState.value.contacts
+
+    fun addContact(contactItem: ContactItem) {
+        _submitViewState.apply {
+            value = value.copy(contacts = value.contacts.toMutableList().apply {
+                add(contactItem)
+            }, executionStatus = ExecutionStatus.LOADING)
+        }
+    }
+
     fun submitBook() {
         viewModelScope.launch {
-            val contactItems = mutableListOf<ContactItem>()
-            repeat(10) {
-                contactItems.add(
-                    ContactItem(
-                        alias = "alia->$it",
-                        number = "1343464667",
-                        type = "type->$it"
-                    )
-                )
+            _submitViewState.apply {
+                delay(350)
+                value = try {
+                    val info =
+                        baseEndpoints.addBook(
+                            JSON.encodeToString(
+                                Contacts.serializer(),
+                                Contacts(contacts)
+                            ).toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
+                        )
+                    value.copy(executionStatus = ExecutionStatus.SUCCESS, msg = "配置加载成功(:")
+                } catch (e: Exception) {
+                    value.copy(executionStatus = ExecutionStatus.FAIL, msg = "配置加载失败):")
+                }
+                delay(300)
+                value = value.copy(executionStatus = ExecutionStatus.UNKNOWN, msg = "")
             }
-            try {
-                val info =
-                    baseEndpoints.addBook(
-                        JSON.encodeToString(
-                            Contacts.serializer(),
-                            Contacts(contactItems)
-                        ).toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
-                    )
-                logE(info)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
+
         }
     }
 
