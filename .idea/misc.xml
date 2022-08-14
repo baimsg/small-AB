@@ -10,11 +10,13 @@
         <entry key="app/src/main/res/drawable/ic_eye.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/ic_eye_no_show.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/ic_eye_show.xml" value="0.2625" />
+        <entry key="app/src/main/res/drawable/ic_phone.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/shape_button_pink_default.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/shape_button_pink_disabled.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/shape_button_pink_pressed.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/shape_edit_login.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5760416666666667" />
+        <entry key="app/src/main/res/layout/dialog_loading.xml" value="0.29393115942028986" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.5760416666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.575" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.29393115942028986" />

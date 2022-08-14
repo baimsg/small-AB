@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">视蜜讯</string>
     <string name="go_setting">去设置</string>
     <string name="permission_setting">您需要在“设置”中手动授予必要的权限</string>
     <string name="permission_fail">权限申请失败):</string>
@@ -10,4 +9,5 @@
     <string name="go_register">没有账号去注册</string>
     <string name="password_show">显示密码</string>
     <string name="phone">手机</string>
+    <string name="register_tip">暂时不开放注册通道):</string>
 </resources>
