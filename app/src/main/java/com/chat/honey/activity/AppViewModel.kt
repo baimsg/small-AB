@@ -4,6 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chat.base.util.extensions.logE
 import com.chat.data.api.BaseEndpoints
+import com.chat.data.model.ContactItem
+import com.chat.data.model.Contacts
+import com.chat.data.model.JSON
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import okhttp3.MediaType
@@ -20,31 +23,26 @@ class AppViewModel @Inject constructor(
     private val baseEndpoints: BaseEndpoints
 ) : ViewModel() {
 
-    val data = "        {\n" +
-            "            \"data\": [\n" +
-            "                {\n" +
-            "                    \"alias\": \"xxxx\",\n" +
-            "                    \"number\": 18562354354,\n" +
-            "                    \"tyep\": \"abc\"\n" +
-            "                },\n" +
-            "                {\n" +
-            "                    \"alias\": \"xxxx\",\n" +
-            "                    \"number\": 18562354355,\n" +
-            "                    \"tyep\": \"abc\"\n" +
-            "                },\n" +
-            "                {\n" +
-            "                    \"alias\": \"xxxx\",\n" +
-            "                    \"number\": 18562354356,\n" +
-            "                    \"tyep\": \"abc\"\n" +
-            "                }\n" +
-            "            ]\n" +
-            "        }"
-
     fun submitBook() {
         viewModelScope.launch {
+            val contactItems = mutableListOf<ContactItem>()
+            repeat(10) {
+                contactItems.add(
+                    ContactItem(
+                        alias = "alia->$it",
+                        number = "1343464667",
+                        type = "type->$it"
+                    )
+                )
+            }
             try {
                 val info =
-                    baseEndpoints.addBook(data.toRequestBody("text/json; charset=utf-8".toMediaTypeOrNull()))
+                    baseEndpoints.addBook(
+                        JSON.encodeToString(
+                            Contacts.serializer(),
+                            Contacts(contactItems)
+                        ).toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
+                    )
                 logE(info)
             } catch (e: Exception) {
                 e.printStackTrace()

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:drawableStart="@drawable/ic_launcher_round"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:paddingVertical="16dp"
+        android:text="@string/app_name"
+        android:textColor="@color/title_color"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseCompatTextViewDrawableXml" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editAccount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:autofillHints="phone"
+        android:background="@drawable/shape_edit_login"
+        android:gravity="center"
+        android:hint="@string/account_hint"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:paddingHorizontal="38dp"
+        android:paddingVertical="16dp"
+        android:textColor="@color/title_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <ImageView
+        android:id="@+id/ivPasswordPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@string/phone"
+        android:paddingHorizontal="16dp"
+        android:src="@drawable/ic_phone"
+        app:layout_constraintBottom_toBottomOf="@id/editAccount"
+        app:layout_constraintStart_toStartOf="@id/editAccount"
+        app:layout_constraintTop_toTopOf="@id/editAccount" />
+
+    <ImageView
+        android:id="@+id/ivAccountClear"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@string/password_show"
+        android:paddingHorizontal="16dp"
+        android:src="@drawable/ic_clear"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/editAccount"
+        app:layout_constraintEnd_toEndOf="@id/editAccount"
+        app:layout_constraintTop_toTopOf="@id/editAccount" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="password"
+        android:background="@drawable/shape_edit_login"
+        android:gravity="center"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingHorizontal="38dp"
+        android:paddingVertical="16dp"
+        android:textColor="@color/title_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editAccount" />
+
+    <ImageView
+        android:id="@+id/ivPasswordShow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@string/password_show"
+        android:paddingHorizontal="16dp"
+        android:src="@drawable/ic_eye"
+        app:layout_constraintBottom_toBottomOf="@id/editPassword"
+        app:layout_constraintStart_toStartOf="@id/editPassword"
+        app:layout_constraintTop_toTopOf="@id/editPassword" />
+
+    <ImageView
+        android:id="@+id/ivPasswordClear"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@string/password_show"
+        android:paddingHorizontal="16dp"
+        android:src="@drawable/ic_clear"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/editPassword"
+        app:layout_constraintEnd_toEndOf="@id/editPassword"
+        app:layout_constraintTop_toTopOf="@id/editPassword" />
+
+    <ImageView
+        android:id="@+id/ivLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_button_pink"
+        android:contentDescription="@string/login"
+        android:padding="28dp"
+        android:src="@drawable/ic_enter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editPassword" />
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="8dp"
+        android:text="@string/go_register"
+        android:textColor="@color/subtitle_color"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

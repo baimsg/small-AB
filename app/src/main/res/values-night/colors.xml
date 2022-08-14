@@ -12,4 +12,11 @@
     <color name="item_bg_white_disabled">#33252525</color>
     <color name="item_bg_white_pressed">#80252525</color>
 
+
+    <color name="title_color">#FFFFFF</color>
+    <color name="subtitle_color">#666666</color>
+
+    <color name="icon_tint">#FFFFFF</color>
+    <color name="icon_tint_pressed">#33FFFFFF</color>
+
 </resources>

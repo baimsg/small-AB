@@ -1,5 +1,6 @@
-package com.chat.honey.fragemnt
+package com.chat.honey.fragment.home
 
+import androidx.navigation.fragment.findNavController
 import com.chat.honey.R
 import com.chat.honey.base.BaseFragment
 import com.chat.honey.databinding.FragmentHomeBinding
@@ -10,6 +11,6 @@ import com.chat.honey.databinding.FragmentHomeBinding
  **/
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun initView() {
-
+        findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
     }
 }
