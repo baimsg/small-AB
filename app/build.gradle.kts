@@ -35,6 +35,7 @@ android {
         targetSdk = Dep.targetSdk
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         ndk {
             abiFilters.apply {
@@ -83,6 +84,8 @@ android {
     compileOptions {
         sourceCompatibility = Dep.javaVersion
         targetCompatibility = Dep.javaVersion
+
+        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = Dep.kotlinJvmTarget
@@ -98,6 +101,7 @@ dependencies {
     implementation(project(":common-data"))
     api(Dep.Hilt.library)
 
+    coreLibraryDesugaring(Dep.Libs.desugar)
     //hilt
     kapt(Dep.Hilt.compiler)
 }

@@ -117,6 +117,8 @@ object Dep {
         const val permissionX = "com.guolindev.permissionx:permissionx:1.6.4"
         const val pudding = "com.github.o0o0oo00:Pudding:1.2.1"
 
+        const val desugar = "com.android.tools:desugar_jdk_libs:1.1.5"
+
         object Dialog {
             private const val ver = "3.3.0"
             const val core = "com.afollestad.material-dialogs:core:$ver"

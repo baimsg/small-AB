@@ -21,6 +21,8 @@ android {
     compileOptions {
         sourceCompatibility = Dep.javaVersion
         targetCompatibility = Dep.javaVersion
+
+        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = Dep.kotlinJvmTarget
@@ -34,4 +36,6 @@ dependencies {
     api(Dep.Hilt.library)
     //hilt
     kapt(Dep.Hilt.compiler)
+
+    coreLibraryDesugaring(Dep.Libs.desugar)
 }

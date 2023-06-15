@@ -21,6 +21,8 @@ android {
     compileOptions {
         sourceCompatibility = Dep.javaVersion
         targetCompatibility = Dep.javaVersion
+
+        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = Dep.kotlinJvmTarget
@@ -74,4 +76,6 @@ dependencies {
     //Bugly
     api(Dep.Bugly.upgrade)
     api(Dep.Bugly.native)
+
+    coreLibraryDesugaring(Dep.Libs.desugar)
 }
