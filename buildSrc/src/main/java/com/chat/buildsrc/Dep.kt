@@ -1,19 +1,15 @@
 package com.chat.buildsrc
 
-import org.gradle.api.JavaVersion
-
 /**
  * Create by Baimsg on 2022/8/11
  *
  **/
 object Dep {
-    val javaVersion = JavaVersion.VERSION_11
-    const val kotlinJvmTarget = "11"
-    const val kotlinVer = "1.7.10"
+    const val kotlinVer = "1.8.10"
 
-    const val compileSdk = 32
+    const val compileSdk = 33
     const val minSdk = 21
-    const val targetSdk = 32
+    const val targetSdk = 33
 
     const val group = "com.baimsg.chat"
 
@@ -67,13 +63,13 @@ object Dep {
         }
 
         object Navigation {
-            private const val version = "2.4.2"
+            private const val version = "2.5.3"
             const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             const val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
         }
 
         object LifeCycle {
-            private const val ver = "2.5.0-rc01"
+            private const val ver = "2.5.1"
             const val vmKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$ver"
             const val runtimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:$ver"
             const val liveDate = "androidx.lifecycle:lifecycle-livedata-ktx:$ver"
@@ -106,7 +102,7 @@ object Dep {
     }
 
     object Hilt {
-        private const val hilt = "2.42"
+        private const val hilt = "2.45"
         const val library = "com.google.dagger:hilt-android:$hilt"
         const val compiler = "com.google.dagger:hilt-compiler:$hilt"
     }
@@ -116,7 +112,7 @@ object Dep {
         const val glide = "com.github.bumptech.glide:glide:4.11.0"
         const val permissionX = "com.guolindev.permissionx:permissionx:1.6.4"
         const val pudding = "com.github.o0o0oo00:Pudding:1.2.1"
-
+        const val baseAdapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7"
         const val desugar = "com.android.tools:desugar_jdk_libs:1.1.5"
 
         object Dialog {

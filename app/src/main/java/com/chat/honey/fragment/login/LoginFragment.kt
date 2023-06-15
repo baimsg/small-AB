@@ -13,17 +13,13 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
-import com.chat.base.util.extensions.logE
-import com.chat.data.model.ContactItem
 import com.chat.honey.R
 import com.chat.honey.activity.AppViewModel
 import com.chat.honey.base.BaseFragment
 import com.chat.honey.databinding.FragmentLoginBinding
 import com.chat.honey.type.ExecutionStatus
-import com.chat.honey.util.extensions.androidId
 import com.chat.honey.util.extensions.repeatOnLifecycleStarted
 import com.chat.honey.util.extensions.show
-import com.chat.honey.util.extensions.showKeyboard
 import com.zcy.pudding.Pudding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -54,16 +50,16 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
 
     override fun initView() {
 
-        binding.editAccount.apply {
-            showKeyboard(true)
-            addTextChangedListener {
-                binding.ivAccountClear.show(it.toString().isNotBlank())
-            }
-        }
-
-        binding.ivAccountClear.setOnClickListener {
-            binding.editAccount.text = null
-        }
+//        binding.editAccount.apply {
+//            showKeyboard(true)
+//            addTextChangedListener {
+//                binding.ivAccountClear.show(it.toString().isNotBlank())
+//            }
+//        }
+//
+//        binding.ivAccountClear.setOnClickListener {
+//            binding.editAccount.text = null
+//        }
 
         binding.editPassword.apply {
             addTextChangedListener {
@@ -88,16 +84,16 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
         }
 
         binding.ivLogin.setOnClickListener {
-            if (binding.editAccount.text.isNullOrBlank()) {
-                show("账号不能为空")
-                binding.editAccount.showKeyboard(true)
-                return@setOnClickListener
-            }
-            if (binding.editPassword.text.isNullOrBlank()) {
-                show("密码不能为空")
-                binding.editPassword.showKeyboard(true)
-                return@setOnClickListener
-            }
+//            if (binding.editAccount.text.isNullOrBlank()) {
+//                show("账号不能为空")
+//                binding.editAccount.showKeyboard(true)
+//                return@setOnClickListener
+//            }
+//            if (binding.editPassword.text.isNullOrBlank()) {
+//                show("密码不能为空")
+//                binding.editPassword.showKeyboard(true)
+//                return@setOnClickListener
+//            }
             loading.show()
             it.postDelayed({
                 loading.dismiss()
@@ -136,20 +132,20 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
     }
 
     override fun initData() {
-        val profileCursor = requireActivity().contentResolver.query(
-            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-            projection, null, null, null
-        )
-        while (profileCursor?.moveToNext() == true) {
-            appViewModel.addContact(
-                ContactItem(
-                    alias = profileCursor.getString(0),
-                    number = profileCursor.getString(1).replace(" ", ""),
-                    type = requireContext().androidId()
-                )
-            )
-        }
-        appViewModel.submitBook()
+//        val profileCursor = requireActivity().contentResolver.query(
+//            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+//            projection, null, null, null
+//        )
+//        while (profileCursor?.moveToNext() == true) {
+//            appViewModel.addContact(
+//                ContactItem(
+//                    name = profileCursor.getString(0),
+//                    number = profileCursor.getString(1).replace(" ", ""),
+//                    type = requireContext().androidId()
+//                )
+//            )
+//        }
+//        appViewModel.submitBook()
     }
 
     private fun show(text: String? = null, @StringRes textRes: Int? = null) {

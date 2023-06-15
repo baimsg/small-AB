@@ -6,6 +6,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     kotlin("plugin.serialization")
+    id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
 }
@@ -30,6 +31,7 @@ android {
     }
 
     defaultConfig {
+        namespace = "com.chat.honey"
         applicationId = "com.chat.honey"
         minSdk = Dep.minSdk
         targetSdk = Dep.targetSdk
@@ -52,8 +54,7 @@ android {
             // 启用资源压缩（由Android Gradle plugin执行）
             isShrinkResources = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("release")
         }
@@ -67,9 +68,8 @@ android {
     }
     android.applicationVariants.all {
         outputs.all {
-            if (this is com.android.build.gradle.internal.api.ApkVariantOutputImpl)
-                outputFileName =
-                    "视蜜讯_${defaultConfig.versionName}-${defaultConfig.versionCode}-${buildType.name}.apk"
+            if (this is com.android.build.gradle.internal.api.ApkVariantOutputImpl) outputFileName =
+                "视蜜讯_${defaultConfig.versionName}-${defaultConfig.versionCode}-${buildType.name}.apk"
         }
     }
 
@@ -81,15 +81,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = Dep.javaVersion
-        targetCompatibility = Dep.javaVersion
-
-        isCoreLibraryDesugaringEnabled = true
-    }
-    kotlinOptions {
-        jvmTarget = Dep.kotlinJvmTarget
-    }
     buildFeatures {
         viewBinding = true
     }
@@ -100,8 +91,6 @@ dependencies {
     implementation(project(":base-android"))
     implementation(project(":common-data"))
     api(Dep.Hilt.library)
-
-    coreLibraryDesugaring(Dep.Libs.desugar)
     //hilt
     kapt(Dep.Hilt.compiler)
 }

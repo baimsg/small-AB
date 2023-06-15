@@ -6,7 +6,7 @@ import android.graphics.Typeface
 import androidx.core.content.ContextCompat
 import com.chat.honey.R
 import com.chat.honey.base.BaseActivity
-import com.chat.honey.databinding.ActivityLaunchBinding
+import com.chat.honey.databinding.ActivityPermissionBinding
 import com.permissionx.guolindev.PermissionX
 import com.zcy.pudding.Pudding
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,11 +16,10 @@ import dagger.hilt.android.AndroidEntryPoint
  *
  **/
 @AndroidEntryPoint
-class LaunchActivity : BaseActivity<ActivityLaunchBinding>() {
+class PermissionActivity : BaseActivity<ActivityPermissionBinding>() {
     private val permissions = listOf(
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.READ_CONTACTS,
+        Manifest.permission.WRITE_CONTACTS,
     )
 
     override fun initView() {
@@ -32,16 +31,14 @@ class LaunchActivity : BaseActivity<ActivityLaunchBinding>() {
                     resources.getString(R.string.go_setting),
                     resources.getString(android.R.string.cancel)
                 )
-            }
-            .request { allGranted, _, _ ->
+            }.request { allGranted, _, _ ->
                 if (allGranted) {
                     nextActivity()
                 } else {
                     Pudding.create(this) {
                         setChocoBackgroundColor(
                             ContextCompat.getColor(
-                                applicationContext,
-                                R.color.color_primary_variant
+                                applicationContext, R.color.color_primary_variant
                             )
                         )
                         setTitleTypeface(Typeface.DEFAULT_BOLD)

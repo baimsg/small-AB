@@ -19,4 +19,6 @@
     <color name="icon_tint">#FFFFFF</color>
     <color name="icon_tint_pressed">#33FFFFFF</color>
 
+    <color name="line_color">#000000</color>
+
 </resources>

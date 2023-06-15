@@ -8,32 +8,11 @@ plugins {
 }
 
 android {
-    compileSdk = Dep.compileSdk
-
     defaultConfig {
-        minSdk = Dep.minSdk
-        targetSdk = Dep.targetSdk
-
+        namespace = "com.chat.base.android"
         vectorDrawables.useSupportLibrary = true
-
-    }
-
-    compileOptions {
-        sourceCompatibility = Dep.javaVersion
-        targetCompatibility = Dep.javaVersion
-
-        isCoreLibraryDesugaringEnabled = true
-    }
-    kotlinOptions {
-        jvmTarget = Dep.kotlinJvmTarget
-    }
-    sourceSets {
-        getByName("main") {
-            jniLibs.srcDirs("libs")
-        }
     }
 }
-
 dependencies {
     api(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     api(project(":base"))
@@ -65,6 +44,7 @@ dependencies {
     api(Dep.Libs.glide)
     api(Dep.Libs.pudding)
     api(Dep.Libs.permissionX)
+    api(Dep.Libs.baseAdapter)
     api(Dep.Libs.Dialog.core)
     api(Dep.Libs.Dialog.input)
     api(Dep.Libs.Dialog.datetime)
@@ -76,6 +56,4 @@ dependencies {
     //Bugly
     api(Dep.Bugly.upgrade)
     api(Dep.Bugly.native)
-
-    coreLibraryDesugaring(Dep.Libs.desugar)
 }

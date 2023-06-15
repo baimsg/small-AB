@@ -26,7 +26,7 @@
         tools:ignore="UseCompatTextViewDrawableXml" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editAccount"
+        android:id="@+id/editSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
@@ -46,15 +46,15 @@
         app:layout_constraintTop_toBottomOf="@id/tvName" />
 
     <ImageView
-        android:id="@+id/ivPasswordPhone"
+        android:id="@+id/ivSearch"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:contentDescription="@string/phone"
         android:paddingHorizontal="16dp"
         android:src="@drawable/ic_phone"
-        app:layout_constraintBottom_toBottomOf="@id/editAccount"
-        app:layout_constraintStart_toStartOf="@id/editAccount"
-        app:layout_constraintTop_toTopOf="@id/editAccount" />
+        app:layout_constraintBottom_toBottomOf="@id/editSearch"
+        app:layout_constraintStart_toStartOf="@id/editSearch"
+        app:layout_constraintTop_toTopOf="@id/editSearch" />
 
     <ImageView
         android:id="@+id/ivAccountClear"
@@ -64,9 +64,9 @@
         android:paddingHorizontal="16dp"
         android:src="@drawable/ic_clear"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/editAccount"
-        app:layout_constraintEnd_toEndOf="@id/editAccount"
-        app:layout_constraintTop_toTopOf="@id/editAccount" />
+        app:layout_constraintBottom_toBottomOf="@id/editSearch"
+        app:layout_constraintEnd_toEndOf="@id/editSearch"
+        app:layout_constraintTop_toTopOf="@id/editSearch" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editPassword"
@@ -85,7 +85,7 @@
         android:textColor="@color/title_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editAccount" />
+        app:layout_constraintTop_toBottomOf="@id/editSearch" />
 
     <ImageView
         android:id="@+id/ivPasswordShow"

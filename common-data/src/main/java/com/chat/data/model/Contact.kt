@@ -8,12 +8,13 @@ import kotlinx.serialization.Serializable
  **/
 @Serializable
 data class Contacts(
-    val data: List<ContactItem>
+    val data: List<ContactItem>,
 )
 
 @Serializable
 data class ContactItem(
-    val alias: String,
+    val id: Long,
+    val name: String,
     val number: String,
-    val type: String
+    val photoThumbUri: String,
 )

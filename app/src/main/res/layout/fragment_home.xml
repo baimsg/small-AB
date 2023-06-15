@@ -1,7 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
+
+    <View
+        android:id="@+id/vHeader"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@color/color_primary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editSearch"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="8dp"
+        android:autofillHints="phone"
+        android:background="@drawable/shape_edit_login"
+        android:gravity="center"
+        android:hint="@string/account_hint"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:paddingHorizontal="48dp"
+        android:textColor="@color/title_color"
+        app:layout_constraintBottom_toBottomOf="@id/vHeader"
+        app:layout_constraintEnd_toEndOf="@id/vHeader"
+        app:layout_constraintStart_toStartOf="@id/vHeader" />
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@string/search"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@id/editSearch"
+        app:layout_constraintStart_toStartOf="@id/editSearch"
+        app:layout_constraintTop_toTopOf="@id/editSearch" />
+
+    <ImageView
+        android:id="@+id/ivAccountClear"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@string/clear"
+        android:paddingHorizontal="16dp"
+        android:src="@drawable/ic_clear"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/editSearch"
+        app:layout_constraintEnd_toEndOf="@id/editSearch"
+        app:layout_constraintTop_toTopOf="@id/editSearch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ryContacts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vHeader" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

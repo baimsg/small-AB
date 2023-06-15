@@ -9,6 +9,7 @@ plugins {
 android {
     compileSdk = Dep.compileSdk
     defaultConfig {
+        namespace="com.chat.base"
         minSdk = Dep.minSdk
         javaCompileOptions {
             annotationProcessorOptions {
@@ -20,15 +21,6 @@ android {
             }
         }
     }
-    compileOptions {
-        sourceCompatibility = Dep.javaVersion
-        targetCompatibility = Dep.javaVersion
-
-        isCoreLibraryDesugaringEnabled = true
-    }
-    kotlinOptions {
-        jvmTarget = Dep.kotlinJvmTarget
-    }
     sourceSets {
         getByName("main") {
             jniLibs.srcDirs("libs")
@@ -38,7 +30,6 @@ android {
 
 dependencies {
     api(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
-    coreLibraryDesugaring(Dep.Libs.desugar)
     //Kotlin
     api(Dep.Kotlin.stdlib)
     api(Dep.Kotlin.Serialization.json)

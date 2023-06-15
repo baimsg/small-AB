@@ -10,24 +10,16 @@ plugins {
 }
 
 android {
-    compileSdk = Dep.compileSdk
 
     defaultConfig {
-        minSdk = Dep.minSdk
-        targetSdk = Dep.targetSdk
+        namespace = "com.chat.data"
     }
 
-
-    compileOptions {
-        sourceCompatibility = Dep.javaVersion
-        targetCompatibility = Dep.javaVersion
-
-        isCoreLibraryDesugaringEnabled = true
-    }
-    kotlinOptions {
-        jvmTarget = Dep.kotlinJvmTarget
+    buildFeatures {
+        buildConfig = true
     }
 }
+
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
@@ -36,6 +28,4 @@ dependencies {
     api(Dep.Hilt.library)
     //hilt
     kapt(Dep.Hilt.compiler)
-
-    coreLibraryDesugaring(Dep.Libs.desugar)
 }
