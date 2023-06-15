@@ -13,6 +13,16 @@ android {
 
     defaultConfig {
         namespace = "com.chat.data"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += mapOf(
+                    "room.schemaLocation" to "$projectDir/schemas",
+                    "room.incremental" to "true",
+                    "room.expandProjection" to "true"
+                )
+            }
+        }
     }
 
     buildFeatures {
@@ -25,6 +35,8 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     implementation(project(":base"))
     implementation(project(":base-android"))
+    //Room
+    kapt(Dep.AndroidX.Room.compiler)
     api(Dep.Hilt.library)
     //hilt
     kapt(Dep.Hilt.compiler)

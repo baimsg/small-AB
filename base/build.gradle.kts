@@ -44,4 +44,10 @@ dependencies {
     api(Dep.OkHttp.library)
     api(Dep.OkHttp.loggingInterceptor)
     api(Dep.Libs.mmkv)
+    //Rom
+    api(Dep.AndroidX.Room.common)
+    api(Dep.AndroidX.Room.runtime)
+    api(Dep.AndroidX.Room.ktx)
+    api(Dep.AndroidX.Room.paging)
+    kapt(Dep.AndroidX.Room.compiler)
 }

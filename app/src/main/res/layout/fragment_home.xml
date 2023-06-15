@@ -9,7 +9,6 @@
         android:id="@+id/vHeader"
         android:layout_width="match_parent"
         android:layout_height="88dp"
-        android:background="@color/color_primary"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -20,14 +19,15 @@
         android:layout_marginBottom="8dp"
         android:autofillHints="phone"
         android:background="@drawable/shape_edit_login"
-        android:gravity="center"
         android:hint="@string/account_hint"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:paddingHorizontal="48dp"
+        android:paddingHorizontal="58dp"
         android:textColor="@color/title_color"
+        android:textColorHint="@color/subtitle_color"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/vHeader"
-        app:layout_constraintEnd_toEndOf="@id/vHeader"
+        app:layout_constraintEnd_toStartOf="@id/ivAdd"
         app:layout_constraintStart_toStartOf="@id/vHeader" />
 
     <ImageView
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="@id/editSearch" />
 
     <ImageView
-        android:id="@+id/ivAccountClear"
+        android:id="@+id/ivSearchClear"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:contentDescription="@string/clear"
@@ -52,6 +52,17 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/editSearch"
         app:layout_constraintEnd_toEndOf="@id/editSearch"
+        app:layout_constraintTop_toTopOf="@id/editSearch" />
+
+    <ImageView
+        android:id="@+id/ivAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:contentDescription="@string/add"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="@id/editSearch"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/editSearch" />
 
     <androidx.recyclerview.widget.RecyclerView

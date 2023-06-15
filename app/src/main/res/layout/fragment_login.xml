@@ -57,7 +57,7 @@
         app:layout_constraintTop_toTopOf="@id/editSearch" />
 
     <ImageView
-        android:id="@+id/ivAccountClear"
+        android:id="@+id/ivSearchClear"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:contentDescription="@string/password_show"

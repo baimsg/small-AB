@@ -76,6 +76,18 @@ object Dep {
             const val vmSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$ver"
             const val compiler = "androidx.lifecycle:lifecycle-compiler:$ver"
         }
+
+
+        //数据库
+        object Room {
+            private const val ver = "2.4.2"
+            const val common = "androidx.room:room-common:$ver"
+            const val ktx = "androidx.room:room-ktx:$ver"
+            const val runtime = "androidx.room:room-runtime:$ver"
+            const val compiler = "androidx.room:room-compiler:$ver"
+            const val paging = "androidx.room:room-paging:$ver"
+        }
+
     }
 
     object Kotlin {

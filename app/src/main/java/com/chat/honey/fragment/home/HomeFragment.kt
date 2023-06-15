@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +23,7 @@ import com.chat.honey.databinding.EmptyBaseBinding
 import com.chat.honey.databinding.FooterContactsBinding
 import com.chat.honey.databinding.FragmentHomeBinding
 import com.chat.honey.util.extensions.repeatOnLifecycleStarted
+import com.chat.honey.util.extensions.show
 import com.zcy.pudding.Pudding
 import kotlinx.coroutines.flow.collectLatest
 
@@ -76,6 +78,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
                     data.id
                 )
             )
+        }
+
+        binding.editSearch.apply {
+            addTextChangedListener {
+                binding.ivSearchClear.show(it.toString().isNotBlank())
+            }
+        }
+
+        binding.ivSearchClear.setOnClickListener {
+            binding.editSearch.text = null
         }
     }
 
