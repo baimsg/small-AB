@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 /**
@@ -23,13 +24,13 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     stateHandle: SavedStateHandle,
-    contactsDao: ContactsDao,
+    private val contactsDao: ContactsDao,
 ) : ViewModel() {
     val id = stateHandle.get<Long>("id")
 
     private val _contacts: MutableStateFlow<Contacts> = MutableStateFlow(Contacts(id = 0))
 
-    val observeContacts: StateFlow<Contacts> = _contacts.asStateFlow()
+    val observeContacts: StateFlow<Contacts?> = _contacts.asStateFlow()
 
     private val _message: MutableStateFlow<String?> = MutableStateFlow(null)
 
@@ -50,6 +51,15 @@ class DetailViewModel @Inject constructor(
 
     fun clearMessage() {
         _message.value = null
+    }
+
+    fun delete() = viewModelScope.launch(Dispatchers.IO) {
+        runCatching {
+            contactsDao.deleteById("$id")
+            _message.value = "删除联系人成功(:"
+        }.onFailure {
+            _message.value = "删除联系人失败):\n${it.message}"
+        }
     }
 
 }

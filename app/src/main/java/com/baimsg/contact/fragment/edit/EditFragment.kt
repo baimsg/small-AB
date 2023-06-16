@@ -129,7 +129,10 @@ class EditFragment : BaseFragment<FragmentEditBinding>(R.layout.fragment_edit) {
                 logE(it.copy(header = it.header?.substring(0, 5)))
                 with(binding) {
                     with(editName) {
-                        if (text.isNullOrEmpty()) setText(it.name)
+                        if (text.isNullOrEmpty()) {
+                            setText(it.name)
+                            setSelection(it.name.length)
+                        }
                     }
                     with(editNumber) {
                         if (text.isNullOrEmpty()) setText(it.number)

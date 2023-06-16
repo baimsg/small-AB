@@ -33,7 +33,11 @@ class HomeViewModel @Inject constructor(
 
     val observeContacts: StateFlow<List<Contacts>> = _contacts.asStateFlow()
 
-    fun load() = viewModelScope.launch(Dispatchers.IO) {
+    init {
+        load()
+    }
+
+    private fun load() = viewModelScope.launch(Dispatchers.IO) {
         runCatching {
             contactsDao.observeEntries().collectLatest {
                 _allContacts = it

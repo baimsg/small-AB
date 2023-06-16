@@ -33,8 +33,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val homeViewModel by viewModels<HomeViewModel>()
 
     private val loading by lazy {
-        MaterialDialog(requireContext()).maxWidth(com.baimsg.resource.R.dimen.loading).cancelOnTouchOutside(false)
-            .cancelable(false).customView(R.layout.dialog_loading)
+        MaterialDialog(requireContext()).maxWidth(com.baimsg.resource.R.dimen.loading)
+            .cancelOnTouchOutside(false).cancelable(false).customView(R.layout.dialog_loading)
     }
 
     private val contactAdapter by lazy {
@@ -44,8 +44,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private lateinit var tvCount: TextView
 
     override fun initView() {
-        homeViewModel.load()
-
         binding.ryContacts.apply {
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             adapter = contactAdapter

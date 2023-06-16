@@ -36,6 +36,13 @@
             android:name="id"
             android:defaultValue="0L"
             app:argType="long" />
+        <action
+            android:id="@+id/action_detailFragment_to_editFragment"
+            app:destination="@id/editFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit" />
     </fragment>
     <fragment
         android:id="@+id/editFragment"
