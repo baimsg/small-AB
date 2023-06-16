@@ -1,4 +1,4 @@
-import com.chat.buildsrc.Dep
+import com.baimsg.buildsrc.Dep
 
 plugins {
     id("com.android.library")
@@ -10,10 +10,8 @@ plugins {
 }
 
 android {
-
+    namespace = "com.baimsg.data"
     defaultConfig {
-        namespace = "com.chat.data"
-
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments += mapOf(

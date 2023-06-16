@@ -1,4 +1,4 @@
-import com.chat.buildsrc.Dep
+import com.baimsg.buildsrc.Dep
 import java.util.*
 
 plugins {
@@ -31,8 +31,8 @@ android {
     }
 
     defaultConfig {
-        namespace = "com.chat.honey"
-        applicationId = "com.chat.honey"
+        namespace = "com.baimsg.contact"
+        applicationId = "com.baimsg.contact"
         minSdk = Dep.minSdk
         targetSdk = Dep.targetSdk
         versionCode = 1
@@ -87,9 +87,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":ui-resource"))
     implementation(project(":base"))
     implementation(project(":base-android"))
     implementation(project(":common-data"))
+    //Room
+    kapt(Dep.AndroidX.Room.compiler)
+    //Lifecycle
+    kapt(Dep.AndroidX.LifeCycle.compiler)
     api(Dep.Hilt.library)
     //hilt
     kapt(Dep.Hilt.compiler)

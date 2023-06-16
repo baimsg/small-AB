@@ -1,4 +1,4 @@
-import com.chat.buildsrc.Dep
+import com.baimsg.buildsrc.Dep
 
 plugins {
     id("com.android.library")
@@ -8,13 +8,15 @@ plugins {
 }
 
 android {
+    namespace = "com.baimsg.base.android"
+
     defaultConfig {
-        namespace = "com.chat.base.android"
         vectorDrawables.useSupportLibrary = true
     }
 }
 dependencies {
     api(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
+    implementation(project(":ui-resource"))
     api(project(":base"))
     api(Dep.AndroidX.coreKtx)
     api(Dep.AndroidX.appcompat)

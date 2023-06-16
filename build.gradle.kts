@@ -1,4 +1,4 @@
-import com.chat.buildsrc.Dep
+import com.baimsg.buildsrc.Dep
 
 plugins {
     kotlin("plugin.serialization") version "1.8.10" apply false

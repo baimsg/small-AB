@@ -7,16 +7,9 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.chat.honey.fragment.home.HomeFragment"
+        android:name="com.baimsg.contact.fragment.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit"
-            app:popEnterAnim="@anim/fragment_open_enter"
-            app:popExitAnim="@anim/fragment_open_exit" />
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment"
@@ -24,20 +17,31 @@
             app:exitAnim="@anim/fragment_open_exit"
             app:popEnterAnim="@anim/fragment_open_enter"
             app:popExitAnim="@anim/fragment_open_exit" />
+        <action
+            android:id="@+id/action_homeFragment_to_editFragment"
+            app:destination="@id/editFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit" />
+
     </fragment>
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.chat.honey.fragment.login.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" />
-
-
-    <fragment
         android:id="@+id/detailFragment"
-        android:name="com.chat.honey.fragment.detail.DetailFragment"
+        android:name="com.baimsg.contact.fragment.detail.DetailFragment"
         android:label="DetailFragment"
         tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.baimsg.contact.fragment.edit.EditFragment"
+        android:label="EditFragment"
+        tools:layout="@layout/fragment_edit">
         <argument
             android:name="id"
             android:defaultValue="0L"

@@ -17,8 +17,9 @@ dependencyResolutionManagement {
         mavenLocal()
     }
 }
-rootProject.name = "VideoHoney"
+rootProject.name = "smallAB"
 include(":app")
 include(":base")
 include(":base-android")
 include(":common-data")
+include(":ui-resource")

@@ -1,4 +1,4 @@
-import com.chat.buildsrc.Dep
+import com.baimsg.buildsrc.Dep
 
 plugins {
     id("com.android.library")
@@ -7,10 +7,9 @@ plugins {
 }
 
 android {
-    compileSdk = Dep.compileSdk
+    namespace = "com.baimsg.base"
+
     defaultConfig {
-        namespace="com.chat.base"
-        minSdk = Dep.minSdk
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments += mapOf(
@@ -19,11 +18,6 @@ android {
                     "room.expandProjection" to "true"
                 )
             }
-        }
-    }
-    sourceSets {
-        getByName("main") {
-            jniLibs.srcDirs("libs")
         }
     }
 }
