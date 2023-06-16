@@ -22,10 +22,5 @@
     </style>
 
 
-    <!--开屏-->
-    <style name="Theme.VideoHoney.NoActionBar.Launcher">
-        <item name="android:windowBackground">@drawable/launcher_bg</item>
-    </style>
-
 
 </resources>

@@ -29,8 +29,7 @@
 
         <activity
             android:name=".activity.PermissionActivity"
-            android:exported="true"
-            android:theme="@style/Theme.VideoHoney.NoActionBar.Launcher">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

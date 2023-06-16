@@ -4,6 +4,6 @@
     <item android:drawable="@color/item_bg_white_default" />
     <item
         android:bottom="35dp"
-        android:drawable="@mipmap/ic_launcher_foreground"
+        android:drawable="@drawable/ic_launcher_foreground"
         android:gravity="bottom|center_horizontal" />
 </layer-list>
