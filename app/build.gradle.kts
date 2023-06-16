@@ -69,7 +69,7 @@ android {
     android.applicationVariants.all {
         outputs.all {
             if (this is com.android.build.gradle.internal.api.ApkVariantOutputImpl) outputFileName =
-                "视蜜讯_${defaultConfig.versionName}-${defaultConfig.versionCode}-${buildType.name}.apk"
+                "smallAB_${defaultConfig.versionName}-${defaultConfig.versionCode}-${buildType.name}.apk"
         }
     }
 
@@ -77,7 +77,7 @@ android {
     productFlavors {
         create("pro") {
             dimension = "honey"
-            resValue("string", "app_name", "视蜜讯")
+            resValue("string", "app_name", "smallAB")
         }
     }
 

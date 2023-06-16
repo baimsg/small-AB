@@ -33,8 +33,17 @@ class HomeViewModel @Inject constructor(
 
     val observeContacts: StateFlow<List<Contacts>> = _contacts.asStateFlow()
 
+    private val _search: MutableStateFlow<String> = MutableStateFlow("")
+
     init {
         load()
+
+        viewModelScope.launch {
+            _search.collectLatest { word ->
+                _contacts.value =
+                    _allContacts.filter { it.name.contains(word) || it.number.contains(word) }
+            }
+        }
     }
 
     private fun load() = viewModelScope.launch(Dispatchers.IO) {
@@ -47,6 +56,10 @@ class HomeViewModel @Inject constructor(
         }.onFailure {
             _message.value = "获取联系人列表失败${it.message}"
         }
+    }
+
+    fun search(word: String) {
+        _search.value = word
     }
 
     fun clearMessage() {

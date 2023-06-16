@@ -78,6 +78,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         binding.editSearch.apply {
             addTextChangedListener {
+                homeViewModel.search(it.toString())
                 binding.ivSearchClear.show(it.toString().isNotBlank())
             }
         }
